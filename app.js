@@ -1,18 +1,17 @@
-/*let texto = document.querySelector('h5');
-texto.innerHTML = 'Testando o valor no javascript';*/
-
 function exibirTextoNaTela(tag, texto){
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
 }
 
-exibirTextoNaTela('h5', 'texto para testes!!!!!');
+function copiarTexto(){
+    let textoCopiado = document.getElementById("textoRetorno").textContent;
+    console.log(textoCopiado);
+}
 
 // Função para validar se tem caracteres especiais ou acento no texto.
 function temAcentosOuEspeciais(texto) {
     // Expressão regular para verificar se há caracteres acentuados ou especiais
-    const regex = /\W|_/;
-
+    const regex = /[^a-zA-Z 0-9]+/g
     // Testa se o texto contém caracteres que não estão no intervalo ASCII básico
     return regex.test(texto);
 }
@@ -62,22 +61,22 @@ function criptografarTexto(){
     switch (true){
         case validaVazio:
             alert('Favor digitar um texto!');
-            document.getElementById("img").style.display = "hidden"; 
             break;
         case validaEspeciais:
-            alert('Caracteres especiais e letras acentuadas não são permitidas!');
-            document.getElementById("img").style.display = "hidden"; 
+            alert('Caracteres especiais e letras acentuadas não são permitidas!'); 
             break;
         case validarTexto:
-            alert('Favor digitar somente letras minúsculas!'); 
-            document.getElementById("img").style.display = "hidden"; 
+            alert('Favor digitar somente letras minúsculas!');
             break;
         default:
-            let tCriptografado = criptografar(cripto);
-            console.log(tCriptografado); 
-            exibirTextoNaTela('div', tCriptografado);             
-            //document.getElementById("img").style.display = tCriptografado; 
+            let tCriptografado = criptografar(cripto);    
+            document.getElementById("img").style.display = "none"; 
+            document.getElementById("botao3").style.display = "hidden";  
+            document.getElementById("textoRetorno").style.display = "hidden";     
+            exibirTextoNaTela('#textoRetorno',tCriptografado); 
+            console.log(tCriptografado);
             break;       
+            
     }
 }
 
@@ -99,6 +98,10 @@ function descriptografarTexto(){
             break;
         default:
             let descriptografado = descriptografar(textoCripto);
+            document.getElementById("img").style.display = "none"; 
+            document.getElementById("botao3").style.display = "hidden";  
+            document.getElementById("textoRetorno").style.display = "hidden"; 
+            exibirTextoNaTela('#textoRetorno',descriptografado); 
             console.log(descriptografado); 
             break;
     }     

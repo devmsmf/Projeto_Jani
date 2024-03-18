@@ -13,45 +13,25 @@
         <main class="apresentacao">
             <img  class="logo" src="img\logo.png" alt="Logo Alura"/>
             <div class="conteudo">
-                <textarea class="linha-digitavel" id="texto" placeholder="Digite seu texto!!!"></textarea>
-                <img  class="boxresult" src="img\figura.png" alt="garoto com a lupa" />
+                <textarea id="textoDigitado" placeholder="Digite seu texto!!!"></textarea>
+            <div class="retorno">                
+                <img   id="img" src="img\figura.png" alt="garoto com a lupa" />
+                <p id="textoRetorno" value="a"></p>                           
+                <button onclick="copiarTexto()" id="botao3">Copiar</button>
+            </div>
             </div>
             <p class="box3">Apenas letras minúsculas e sem acento.</p>
             <section class="botoes">
-                <input class="botao1" onclick="criptografarTexto()" type="button" value="Criptografar"></input>
+                <input class="botao1" onclick="criptografarTexto()" type="button" value="Criptografar"></input>                
                 <input  class="botao2" onclick="descriptografarTexto()" type="button" value="Descriptografar"></input> 
             </section>
+            <script src="app.js" defer></script>
         </main>
         <footer></footer>
 
 
 
-
-
-
-<!--
-        <h5></h5>
-        <section class="logo">
-            <img src="img\logo.png" alt="Logo Alura"/>
-        </section>
-        <section class="linha-digitavel">
-            <div>
-                <textarea class="linha-digitavel" id="texto" placeholder="Digite seu texto!!!"></textarea>
-            </div>
-        </section>
-        <section>
-            <div class="boxresult" id="img">
-                <img src="img\figura.png" alt="garoto com a lupa" />
-            </div>
-        </section>
-        <section class="box3">
-            <p>Apenas letras minúsculas e sem acento.</p>
-        </section>
-        <section class="box4">            
-            <input class="botao1" onclick="criptografarTexto()" type="button" value="Criptografar"></input>
-            <input class="botao2" onclick="descriptografarTexto()" type="button" value="Descriptografar"></input>            
-        </section>
-       <script src="app.js" defer></script>
+<!--     
 -->
     </body>
 
