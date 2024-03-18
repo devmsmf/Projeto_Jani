@@ -5,7 +5,7 @@ function exibirTextoNaTela(tag, texto){
 
 function copiarTexto(){
     let textoCopiado = document.getElementById("textoRetorno").textContent;
-    console.log(textoCopiado);
+    navigator.clipboard.writeText(textoCopiado);
 }
 
 // Função para validar se tem caracteres especiais ou acento no texto.
